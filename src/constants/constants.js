@@ -3,7 +3,7 @@ import Ali from "./assets/AliHaider.jpeg";
 import Jazil from "./assets/Jazil.jpeg";
 import SurveyKollect from "./assets/SurveyKollect.jpeg";
 import Asaan from "./assets/AsaanRetail.png";
-import MentalHealthChatbot from './assets/MentalHealthChatbot.jpeg';
+import MentalHealthChatbot from './assets/MentalHealthChatBot.jpeg';
 import MathematicalSolve from './assets/Mathimatica.jpeg';
 
 
