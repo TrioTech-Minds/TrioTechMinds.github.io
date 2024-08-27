@@ -1,10 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+import Image from 'next/image';
+
 import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode ,GridContainer,ProfileIntroduction,ProfileName,ProfilePicture,CardContainer, PaddingContainer } from './TimeLineStyles';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { TimeLineData, ProfileData } from '../../constants/constants';
 
 const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
+
 
 
 
