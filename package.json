@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build ",
-    "start": "NODE_OPTIONS=--openssl-legacy-provider next start"
+    "start": "NODE_OPTIONS=--openssl-legacy-provider next start",
+    "export":"next export"
   },
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
