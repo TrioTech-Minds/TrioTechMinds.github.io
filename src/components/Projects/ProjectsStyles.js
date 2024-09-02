@@ -41,8 +41,9 @@ position: relative;
     position: absolute;
     top: 50%;
     // bottom: 0;
-    height: 10%;
-    width: 40px; /* Adjust the width as needed */
+    height: 40px;
+    width: 40px;
+    px; /* Adjust the width as needed */
     pointer-events: none; /* Make sure the blur doesn't interfere with scrolling */
     display: flex;
     align-items: center;
@@ -54,15 +55,19 @@ position: relative;
   }
 
   &::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-    content: '←'; /* Left arrow */
+    left: -45px;
+    background: rgba(255, 255, 255, 1);
+    content: '<'; /* Left arrow */
+    transform: translateY(-5%);
+    pointer-events: auto; 
   }
 
   &::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-    content: '→'; /* Right arrow */
+    right: -45px;;
+    background: rgba(255, 255, 255, 1);
+    content: '>'; /* Right arrow */
+    transform: translateY(5%);
+    pointer-events: auto; 
   }
 
   // /* Show blur and arrows only when there is overflow */

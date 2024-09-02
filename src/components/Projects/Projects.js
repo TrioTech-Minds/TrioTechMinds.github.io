@@ -1,16 +1,50 @@
-import React from 'react';
+import React,{useRef} from 'react';
 
 import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img, Video, YouTubeEmbed, ScrollDiv, TempDiv } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projectsDev, projectsAI } from '../../constants/constants';
 
-const Projects = () => (
+const Projects = () => {
+  const scrollContainerRef = useRef(null);
+  let scrollInterval;
+
+  const startScrolling = (direction) => {
+    const scrollAmount = direction === 'left' ? -10 : 10; // Adjust scroll speed
+
+    scrollInterval = setInterval(() => {
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'auto' });
+    }, 10); // Adjust interval for smoothness
+  };
+
+  const stopScrolling = () => {
+    clearInterval(scrollInterval);
+  };
+
+  const handleMouseDown = (event) => {
+    const containerRect = scrollContainerRef.current.getBoundingClientRect();
+    if (event.clientX < containerRect.left + 40) {
+      startScrolling('left');
+    } else if (event.clientX > containerRect.right - 40) {
+      startScrolling('right');
+    }
+  };
+  
+  return (
+
+  
+
   <Section  id="projects">
     <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
     <SectionTitle style={{fontSize:'35px'}}> Development</SectionTitle>
-    <TempDiv>
-    <ScrollDiv>
+    <TempDiv
+    ref={scrollContainerRef}
+    onMouseDown={handleMouseDown}
+    onMouseUp={stopScrolling}
+    onMouseLeave={stopScrolling}
+    >
+    <ScrollDiv
+    >
     <GridContainer>
       {projectsDev.map((p, i) => {
         return (
@@ -105,6 +139,7 @@ const Projects = () => (
     </TempDiv>
 
   </Section>
-);
+)
+};
 
 export default Projects;
