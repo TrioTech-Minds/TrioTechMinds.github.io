@@ -38,7 +38,7 @@ module.exports = {
   images: {
     unoptimized: true, // Disable Next.js' image optimization
   },
-  distDir: '.next',
+  distDir: 'out',
   basePath: isProd ? '/TrioTechMinds.github.io' : '',
   trailingSlash: true,
   future: {
